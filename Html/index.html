@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <title>Main page</title>
 </head>
+
 <body>
 <h1 id="header">Registration form</h1>
 <img src="main-image.jpg" alt="Image">
 <hr>
+
 <form action="/register.php" method="post">
     <label>First Name:
         <input type="text" name="firstName" placeholder="Enter your first name" required>
     </label><br>
+
     <label>Last Name:
         <input type="text" name="lastName" placeholder="Enter your last name" required>
     </label><br>
+
     <label>Region:
         <select name="region" required>
             <option></option>
@@ -23,6 +27,7 @@
             <option>Waikato</option>
         </select>
     </label><br>
+
     <label>City:
         <select name="city" required>
             <option></option>
@@ -35,10 +40,12 @@
             <option>Te Rerenga</option>
         </select>
     </label><br>
+
     <label> Email:
         <input type="text" name="email" placeholder="Enter your email" required>
     </label>
     <br>
+
     <label>Choose your citizenship:</label>
     <label>
         <input type="radio" value="1" name="citizenship" checked="checked"> New Zealand
@@ -47,6 +54,7 @@
         <input type="radio" value="2" name="citizenship"> EU
     </label>
     <br>
+
     <label>Preferable tariffs (possible to choose more than 1):</label>
     <select name="preferableTariff" multiple size="3">
         <option>Full tariff</option>
@@ -54,13 +62,16 @@
         <option>Monthly fee + Internet + TV</option>
     </select>
     <br>
+
     <textarea placeholder="Enter your comment"></textarea>
     <br>
     <hr>
-    <input type="checkbox" id="personalDataAgreement">
-    <label for="personalDataAgreement">I agree to the Terms of processing of my personal data</label><br>
+
+    <input type="checkbox" id="personal-data-agreement">
+    <label for="personal-data-agreement">I agree to the Terms of processing of my personal data</label><br>
     <button type="submit">Register</button>
 </form>
+
 <br>
 <br>
 <a href="page-table.html">Check the tariffs</a> <br>
