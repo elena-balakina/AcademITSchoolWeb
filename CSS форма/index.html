@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link href="CSSReset.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <h1>Отправить заявку</h1>
+
+    <div class="content">
+        <form action="/register.php" method="post">
+            <div class="subtitle">Ваше имя <br>
+                <input type="text" name="name" placeholder="Ваше имя *" required>
+            </div>
+
+            <div class="subtitle">Ваш номер телефона <br>
+                <input type="text" name="phoneNumber" placeholder="Ваше номер телефона *" required>
+            </div>
+
+            <div class="subtitle">Ваш email или VK <br>
+                <input type="text" name="email" placeholder="Ваш email или VK *" required>
+            </div>
+
+            <div class="subtitle">Комментарий <br>
+                <textarea name="comment" placeholder="Комментарий (не обязательно)"></textarea>
+            </div>
+
+            <p>Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</p>
+
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
