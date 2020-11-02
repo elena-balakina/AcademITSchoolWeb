@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 20px;
+    color: rgb(103, 101, 101);
+    margin-left: 10px;
+}
+
+table {
+    background: white;
+    color: black;
+    font-family: "Segoe UI";
+    line-height: 41px;
+
+    margin: 1em 0;
+    border: 1px solid #cccccc;
+    border-collapse: collapse;
+    text-indent: 5px;
+
+    max-width: 860px;
+    width: 100%;
+}
+
+tbody {
+    border: inherit;
+}
+
+tr, td, th {
+    border: 1px solid #cccccc;
+    padding: 5px;
+}
+
+th {
+    background: #3498DB;
+    color: white;
+    text-align: left;
+    font-weight: normal;
+}
+
+th.names{
+    width: 20%;
+}
+
+th.job-title{
+    width: 37%;
+}
+
+th.twitter{
+    width: 23%;
+}
+
+tbody tr:nth-child(odd) {
+    background: #EEEEEE
+}
