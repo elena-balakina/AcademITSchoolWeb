@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(254, 238, 214);
+    font-family: Arial, serif;
+    font-size: 18px;
+    color: rgb(103, 101, 101);
+    margin-left: 10px;
+}
+
+h1 {
+    font-size: 31px;
+    font-weight: normal;
+}
+
+.main{
+    max-width: 850px;
+    margin: auto;
+}
+
+span.subtitle {
+    color: rgb(55, 141, 178);
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+div.div-subtitle{
+    margin-bottom: 10px;
+}
+
+span.line-through {
+    text-decoration: line-through;
+}
+
+p {
+    text-indent: 18px;
+    text-align: justify;
+}
