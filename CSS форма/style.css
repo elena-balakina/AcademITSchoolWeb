@@ -3,28 +3,28 @@
 }
 
 body {
-    font-family: Arial;
-    font-size: 18px;
-    color: rgb(103, 101, 101);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #737373;
 }
 
-h1 {
+.header {
     font-size: 31px;
     font-weight: normal;
     margin-bottom: 5px;
     text-indent: 20px;
 }
 
-span.subtitle {
-    color: rgb(55, 141, 178);
+.subtitle {
+    color: #676565;
     font-weight: bold;
 }
 
-span.line-through {
+.line-through {
     text-decoration: line-through;
 }
 
-form {
+.form {
     width: 100%;
     max-width: 1000px;
 }
@@ -54,10 +54,10 @@ form {
 
 button:hover {
     margin-left: auto;
-    background-color: red;
+    background-color: royalblue;
 }
 
-button {
+.submit-button {
     display: block;
     margin-left: auto;
     cursor: pointer;
@@ -72,12 +72,19 @@ button {
     min-height: 38px;
 }
 
-input {
+.input-field {
     min-height: 40px;
     height: 100%;
+    padding: 7px;
 }
 
-textarea {
+.input-area {
     min-height: 130px;
     height: 100%;
+    padding: 7px;
+    resize: none;
+}
+
+::-webkit-input-placeholder {
+    color: #B3B5A6;
 }
