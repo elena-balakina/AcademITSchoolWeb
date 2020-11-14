@@ -10,31 +10,37 @@ body {
     margin-left: 10px;
 }
 
-h1 {
+.header {
     font-size: 31px;
     font-weight: normal;
+    margin-top: 5px;
 }
 
-.main{
+.main {
     max-width: 850px;
-    margin: auto;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
-span.subtitle {
+.subtitle {
     color: rgb(55, 141, 178);
     font-weight: bold;
-    margin-bottom: 3px;
 }
 
-div.div-subtitle{
-    margin-bottom: 10px;
+.course-content {
+    margin-top: 15px;
 }
 
-span.line-through {
+.div-subtitle {
+    margin-bottom: 8px;
+}
+
+.line-through {
     text-decoration: line-through;
 }
 
-p {
+.text-content {
     text-indent: 18px;
     text-align: justify;
 }
