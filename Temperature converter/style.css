@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    font-size: 16px;
+    color: #737373;
+}
+
+.header {
+    font-size: 31px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #676565;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+[name="celsius"], [name="kelvin"], [name="fahrenheit"] {
+    margin-top: 7px;
+    margin-bottom: 5px;
+    max-width: 840px;
+    width: 100%;
+}
+
+.main {
+    max-width: 650px;
+    margin: auto;
+}
+
+.content {
+    padding: 20px;
+    background-color: rgb(254, 238, 214);
+}
+
+button:hover {
+    margin-left: auto;
+    background-color: royalblue;
+}
+
+.convert-button {
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+    color: white;
+    background-color: #3498DB;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    max-width: 170px;
+    min-height: 38px;
+}
+
+.input-field, .output-field {
+    min-height: 40px;
+    height: 100%;
+    padding: 7px;
+}
+
+::-webkit-input-placeholder {
+    color: #B3B5A6;
+}
