@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PhoneBook</title>
+    <link href="CSSReset.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script defer src="libs/jquery-3.5.1.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+<div class="main">
+    <h1 class="header">Phone Book</h1>
+
+    <div class="content">
+        <form id="form">
+            <div class="subtitle">Fill the form to add a new contact:<br>
+                <input id="first-name-input-field" class="input-field" type="text"
+                       placeholder="Enter First Name*">
+                <input id="last-name-input-field" class="input-field" type="text"
+                       placeholder="Enter Last Name*">
+                <input id="phone-number-input-field" class="input-field" type="text"
+                       placeholder="Enter Phone Number*">
+            </div>
+            <div id="error-message" class="error"></div>
+
+            <button id="add-button" class="add-button" type="button">ADD</button>
+        </form>
+
+        <br>
+
+        <div id="table-content">
+            <table id="table" class="table">
+                <thead>
+                <tr>
+                    <th class="id">№</th>
+                    <th class="last-name">Last Name</th>
+                    <th class="first-name">First Name</th>
+                    <th class="phone-number">Phone number</th>
+                    <th class="delete-button-field">Delete contact</th>
+                </tr>
+                </thead>
+                <tbody class="table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
