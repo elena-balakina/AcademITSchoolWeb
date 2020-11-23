@@ -11,7 +11,8 @@
             {
                 cityName: "Saint-Petersburg",
                 population: 3500000
-            }, {
+            },
+            {
                 cityName: "Novosibirsk",
                 population: 1500000
             },
@@ -31,7 +32,8 @@
                 {
                     cityName: "Hamburg",
                     population: 1800000
-                }, {
+                },
+                {
                     cityName: "Munich",
                     population: 1400000
                 }
@@ -47,7 +49,8 @@
                 {
                     cityName: "Lyon",
                     population: 513000
-                }, {
+                },
+                {
                     cityName: "Marseille",
                     population: 860000
                 }
@@ -63,7 +66,8 @@
                 {
                     cityName: "Birmingham",
                     population: 2400000
-                }, {
+                },
+                {
                     cityName: "Manchester",
                     population: 1900000
                 }
@@ -73,7 +77,7 @@
 
     console.log("Максимальное количество городов у страны: " + getMaxCitiesCount(countries));
     console.log("Страна(ы) с максимальным количеством городов:");
-    console.log(getCountryWithMaxCitiesCount(countries));
+    console.log(getCountriesWithMaxCitiesCount(countries));
 
     console.log("Страны и их население: ");
     console.log(getCountriesAndPopulationSum(countries));
@@ -84,7 +88,7 @@
         }, 0);
     }
 
-    function getCountryWithMaxCitiesCount(countries) {
+    function getCountriesWithMaxCitiesCount(countries) {
         var maxCitiesCount = getMaxCitiesCount(countries);
 
         return countries.filter(function (country) {
