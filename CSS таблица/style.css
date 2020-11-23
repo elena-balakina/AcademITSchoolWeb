@@ -4,7 +4,7 @@
 
 body {
     font-size: 20px;
-    color: rgb(103, 101, 101);
+    color: #676565;
 }
 
 .main {
@@ -18,9 +18,8 @@ body {
     font-family: "Segoe UI", sans-serif;
     line-height: 41px;
     margin: 1em 0;
-    border: 1px solid #cccccc;
+    border: 1px solid #CCC;
     border-collapse: collapse;
-    text-indent: 5px;
     max-width: 860px;
     width: 100%;
 }
@@ -29,19 +28,19 @@ body {
     border: inherit;
 }
 
-tr, td, th {
-    border: 1px solid #cccccc;
-    padding: 5px;
+.table-body tr, .table-body td, .table-head th {
+    border: 1px solid #CCC;
+    padding: 3px 8px;
 }
 
-th {
+.table-head th {
     background: #3498DB;
     color: white;
     text-align: left;
     font-weight: normal;
 }
 
-.names {
+.name {
     width: 20%;
 }
 
@@ -54,5 +53,5 @@ th {
 }
 
 .table-body tr:nth-child(odd) {
-    background: #EEEEEE
+    background: #EEE
 }
