@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var list = document.getElementById("todo-list");
     var errorMessage = document.getElementById("error-message");
 
-
     addButton.addEventListener("click", function () {
         var newTodoItemText = newTodoItemField.value;
 
@@ -25,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             listItem.querySelector(".edit-button").addEventListener("click", function () {
-                listItem.innerHTML = "<input class='edit-text'></input><button class='save-button' type='button'>Save</button>" +
-                    "<button class='cancel-button' type='button'>Cancel</button><span id='edit-error-message' class='error'></span>";
+                listItem.innerHTML = "<input class='edit-text'><button class='save-button' type='button'>Save</button>" +
+                    "<button class='cancel-button' type='button'>Cancel</button>" +
+                    "<div id='edit-error-message' class='error'></div>";
                 listItem.querySelector(".edit-text").value = newTodoItemText;
 
                 listItem.querySelector(".save-button").addEventListener("click", function () {
@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         var editErrorMessage = document.getElementById("edit-error-message");
                         editErrorMessage.textContent = "Please, add some text";
                         return;
-                    } else {
-                        newTodoItemText = listItem.querySelector(".edit-text").value;
-                        setViewMode();
                     }
+
+                    newTodoItemText = listItem.querySelector(".edit-text").value;
+                    setViewMode();
                 });
 
                 listItem.querySelector(".cancel-button").addEventListener("click", function () {

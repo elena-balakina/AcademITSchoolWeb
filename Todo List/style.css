@@ -22,13 +22,6 @@ body {
     text-decoration: line-through;
 }
 
-[id="new-todo-item"] {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    max-width: 840px;
-    width: 100%;
-}
-
 .main {
     max-width: 650px;
     margin: auto;
@@ -36,18 +29,18 @@ body {
 
 .content {
     padding: 20px;
-    background-color: lightgrey;
+    background-color: #d3d3d3;
 }
 
-button:hover, .todo-list button:hover {
-    background-color: royalblue;
+.add-button:hover, .todo-list button:hover {
+    background-color: #4169e1;
 }
 
 .add-button {
     display: block;
     margin-left: auto;
     cursor: pointer;
-    color: white;
+    color: #FFF;
     background-color: #3498DB;
     border: none;
     font-weight: bold;
@@ -63,6 +56,9 @@ button:hover, .todo-list button:hover {
     height: 100%;
     padding: 7px;
     margin-top: 10px;
+    margin-bottom: 5px;
+    max-width: 840px;
+    width: 100%;
 }
 
 ::-webkit-input-placeholder {
@@ -70,13 +66,13 @@ button:hover, .todo-list button:hover {
 }
 
 .error {
-    color: red;
-    padding-left: 7px;
+    color: #F00;
+    /*padding-left: 7px;*/
 }
 
 .todo-list button {
     margin-left: 3px;
-    color: white;
+    color: #FFF;
     background-color: #3498DB;
     border: none;
     padding: 5px;
