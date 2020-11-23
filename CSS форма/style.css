@@ -34,14 +34,6 @@ body {
     margin-bottom: 12px;
 }
 
-[name="name"], [name="phoneNumber"], [name="email"], [name="comment"] {
-    margin-top: 7px;
-    margin-bottom: 5px;
-    max-width: 840px;
-    width: 100%;
-    border: none;
-}
-
 .main {
     max-width: 850px;
     margin: auto;
@@ -49,12 +41,12 @@ body {
 
 .content {
     padding: 20px;
-    background-color: rgb(254, 238, 214);
+    background-color: #feeed6;
 }
 
-button:hover {
+.submit-button:hover {
     margin-left: auto;
-    background-color: royalblue;
+    background-color: #4169e1;
 }
 
 .submit-button {
@@ -75,14 +67,24 @@ button:hover {
 .input-field {
     min-height: 40px;
     height: 100%;
-    padding: 7px;
+    padding: 12px 0 10px 12px;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    max-width: 840px;
+    width: 100%;
+    border: none;
 }
 
 .input-area {
     min-height: 130px;
     height: 100%;
-    padding: 7px;
-    resize: none;
+    padding: 12px 0 10px 12px;
+    resize: vertical;
+    margin-top: 7px;
+    margin-bottom: 5px;
+    max-width: 840px;
+    width: 100%;
+    border: none;
 }
 
 ::-webkit-input-placeholder {
