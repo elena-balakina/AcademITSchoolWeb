@@ -1,42 +1,37 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function ready() {
-    function convertToKelvin(celsius) {
-        return (celsius + 273.15).toFixed(2);
+    var celsiusInputField = document.getElementById("celsius");
+    var kelvinInputField = document.getElementById("kelvin");
+    var fahrenheitInputField = document.getElementById("fahrenheit");
+    var convertButton = document.getElementById("convert-button");
+
+    convertButton.addEventListener("click", function () {
+        var celsiusTemperature = Number(celsiusInputField.value);
+        convertTemperatures(celsiusTemperature);
+    });
+
+    celsiusInputField.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            var celsiusTemperature = Number(celsiusInputField.value);
+            convertTemperatures(celsiusTemperature);
+        }
+    });
+
+    function convertToKelvin(celsiusTemperature) {
+        return (celsiusTemperature + 273.15).toFixed(2);
     }
 
-    function convertToFahrenheit(celsius) {
-        return (celsius * 1.8 + 32).toFixed(2);
+    function convertToFahrenheit(celsiusTemperature) {
+        return (celsiusTemperature * 1.8 + 32).toFixed(2);
     }
 
-    function convertTemperatures() {
-        var celsius = document.getElementById('celsius');
-        var celsiusTemperature = Number(celsius.value);
-
-        var kelvin = document.getElementById('kelvin');
-        var fahrenheit = document.getElementById('fahrenheit');
-
-        if (celsiusTemperature === 0) {
-            alert("Введите число")
-        } else if (isNaN(celsiusTemperature)) {
+    function convertTemperatures(celsiusTemperature) {
+        if (celsiusInputField.value === "" || isNaN(celsiusTemperature)) {
             alert("Введите число");
         } else {
-            kelvin.textContent = convertToKelvin(celsiusTemperature);
-            fahrenheit.textContent = convertToFahrenheit(celsiusTemperature);
+            kelvinInputField.textContent = convertToKelvin(celsiusTemperature);
+            fahrenheitInputField.textContent = convertToFahrenheit(celsiusTemperature);
         }
-
-        celsius.value = "";
     }
-
-    var convertButton = document.getElementById('convert-button');
-    convertButton.addEventListener("click", function () {
-        convertTemperatures();
-    });
-
-    var celsius = document.getElementById('celsius');
-    celsius.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-            convertTemperatures();
-        }
-    });
 });

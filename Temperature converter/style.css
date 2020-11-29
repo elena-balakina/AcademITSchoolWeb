@@ -24,7 +24,7 @@ body {
     text-decoration: line-through;
 }
 
-[id="celsius"], [id="kelvin"], [id="fahrenheit"] {
+.input-field, .output-field {
     margin-top: 15px;
     margin-bottom: 5px;
     max-width: 840px;
@@ -50,6 +50,7 @@ button:hover {
 .convert-button {
     display: block;
     margin-left: auto;
+    margin-bottom: 10px;
     cursor: pointer;
     color: white;
     background-color: #3498DB;
