@@ -8,39 +8,47 @@ $(document).ready(function () {
     var addButton = $("#add-button");
     var table = $("#table");
     var errorMessage = $("#error-message");
+    var errorMessagePhone = $("#error-message-phone");
 
     addButton.click(function () {
-        var firstNameInputText = firstNameInputField.val();
-        var lastNameInputText = lastNameInputField.val();
-        var phoneNumberInputText = phoneNumberInputField.val();
+        var firstNameInputText = firstNameInputField.val().trim();
+        var lastNameInputText = lastNameInputField.val().trim();
+        var phoneNumberInputText = phoneNumberInputField.val().trim();
         var phoneNumberInputInt = parseInt(phoneNumberInputText.toString(), 10);
 
-        $(".input-field").each(function () {
-            if ($(this).val() !== "") {
-                errorMessage.text("");
-                $(this).removeClass("empty_field");
-            } else {
-                errorMessage.text("All field must be filled");
-                $(this).addClass("empty_field");
-            }
-        });
+        if (firstNameInputText === "" || lastNameInputText === "" || phoneNumberInputText === "") {
+            errorMessagePhone.text("");
+            errorMessage.text("All fields must be filled");
 
-        if (phoneNumberInputText !== "" && !isNaN(phoneNumberInputInt)) {
-            $(phoneNumberInputField).removeClass("empty_field");
-        } else if (phoneNumberInputText !== "" && isNaN(phoneNumberInputInt)) {
-            errorMessage.text("Phone number field allows only digits");
-            phoneNumberInputField.val("");
-            phoneNumberInputField.focus();
-            $(phoneNumberInputField).addClass("empty_field");
-            return;
-        } else {
-            errorMessage.text("All field must be filled");
-            $(phoneNumberInputField).addClass("empty_field");
+            $("#form").find(".input-field").each(function () {
+                if ($(this).val().trim() === "") {
+                    $(this).addClass("empty-field");
+                } else {
+                    $(this).removeClass("empty-field");
+                }
+            });
+
             return;
         }
 
+        cleanInputFieldErrorClasses();
+
+        if (isNaN(phoneNumberInputInt)) {
+            errorMessage.text("");
+            errorMessagePhone.text("Phone must contain only digits");
+            phoneNumberInputField.addClass("empty-field");
+            return;
+        }
+
+        var listItem = $("<tr>");
+        setViewMode();
+
+        table.append(listItem);
+        updateTableNumeration();
+        cleanFieldsAndErrorMessages();
+
         function setViewMode() {
-            listItem.html("<td class='id'>1</td ><td class='last-name'></td><td class='first-name'></td><td class='phone-number'></td>" +
+            listItem.html("<td class='id'></td ><td class='last-name'></td><td class='first-name'></td><td class='phone-number'></td>" +
                 "<td class='delete-button'></td>");
 
             listItem.find(".last-name").text(lastNameInputText);
@@ -50,16 +58,28 @@ $(document).ready(function () {
             listItem.find(".delete-button").html("<button class=\"delete-button\" type=\"button\">Delete</button>");
             listItem.find(".delete-button").click(function () {
                 listItem.remove();
+                updateTableNumeration();
             });
         }
 
-        var listItem = $("<tr>");
-        setViewMode();
+        function cleanFieldsAndErrorMessages() {
+            firstNameInputField.val("");
+            lastNameInputField.val("");
+            phoneNumberInputField.val("");
+            errorMessage.text("");
+            errorMessagePhone.text("");
+        }
 
-        table.append(listItem);
-        firstNameInputField.val("");
-        lastNameInputField.val("");
-        phoneNumberInputField.val("");
-        errorMessage.text("");
+        function cleanInputFieldErrorClasses() {
+            $("#form").find(".input-field").each(function () {
+                $(this).removeClass("empty-field");
+            });
+        }
+
+        function updateTableNumeration() {
+            $("#table tr").each(function (i) {
+                $(this).find('td:first').text(i + ".");
+            });
+        }
     });
 });

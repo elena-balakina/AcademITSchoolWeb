@@ -40,25 +40,24 @@ body {
     border-color: white;
 }
 
-.empty_field {
+.empty-field {
     border-width: 2px;
-    border-color: red;
+    border-color: #f00;
 }
 
-
-[id="first-name-input-field"] {
+#first-name-input-field {
     margin-right: 10px;
     max-width: 250px;
     width: 100%;
 }
 
-[id="last-name-input-field"] {
+#last-name-input-field {
     max-width: 400px;
     width: 100%;
     margin-right: 10px;
 }
 
-[id="phone-number-input-field"] {
+#phone-number-input-field {
     max-width: 280px;
     width: 100%;
 }
@@ -76,19 +75,19 @@ body {
 .content {
     max-width: 1000px;
     padding: 20px;
-    background-color: lightgrey;
+    background-color: #d3d3d3;
     margin: 15px;
 }
 
-button:hover, .todo-list button:hover {
-    background-color: cornflowerblue;
+.add-button:hover, .todo-list button:hover {
+    background-color: #6495ed;
 }
 
 .add-button {
     display: block;
     margin-left: auto;
     cursor: pointer;
-    color: white;
+    color: #FFF;
     background-color: #3498DB;
     border: none;
     font-weight: bold;
@@ -99,18 +98,18 @@ button:hover, .todo-list button:hover {
     min-height: 38px;
 }
 
-::-webkit-input-placeholder {
+.input-field::placeholder {
     color: #B3B5A6;
 }
 
 .error {
-    color: red;
+    color: #f00;
     padding-left: 7px;
 }
 
 .todo-list button {
     margin-left: 3px;
-    color: white;
+    color: #FFF;
     background-color: #3498DB;
     border: none;
     padding: 5px;
@@ -121,8 +120,8 @@ button:hover, .todo-list button:hover {
 }
 
 .table {
-    background: white;
-    color: black;
+    background: #FFF;
+    color: #000;
     font-family: "Segoe UI", sans-serif;
     line-height: 41px;
     margin: 1em 0;
@@ -149,7 +148,7 @@ tr, td, th {
 
 th {
     background: #3498DB;
-    color: white;
+    color: #FFF;
     text-align: center;
     font-weight: normal;
 }
@@ -180,6 +179,5 @@ th {
 }
 
 .table-body tr:nth-child(odd) {
-    background: #EEEEEE
+    background: #EEE
 }
-
