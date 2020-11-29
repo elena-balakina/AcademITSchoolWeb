@@ -22,13 +22,6 @@ body {
     text-decoration: line-through;
 }
 
-[id="new-todo-item"] {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    max-width: 840px;
-    width: 100%;
-}
-
 .main {
     max-width: 650px;
     margin: auto;
@@ -63,6 +56,9 @@ button:hover, .todo-list button:hover {
     height: 100%;
     padding: 7px;
     margin-top: 10px;
+    margin-bottom: 5px;
+    max-width: 840px;
+    width: 100%;
 }
 
 ::-webkit-input-placeholder {
@@ -71,7 +67,6 @@ button:hover, .todo-list button:hover {
 
 .error {
     color: red;
-    padding-left: 7px;
 }
 
 .todo-list button {

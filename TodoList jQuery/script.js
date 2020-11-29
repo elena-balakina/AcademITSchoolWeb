@@ -7,7 +7,7 @@ $(document).ready(function () {
     var errorMessage = $("#error-message");
 
     addButton.click(function () {
-        var newTodoItemText = newTodoItemField.val();
+        var newTodoItemText = newTodoItemField.val().trim();
 
         if (newTodoItemText === "") {
             errorMessage.text("Please, add some text");
@@ -26,11 +26,10 @@ $(document).ready(function () {
             listItem.find(".edit-button").click(function () {
                 var errorMessage = $("#error-message");
                 errorMessage.text("");
-            });
 
-            listItem.find(".edit-button").click(function () {
                 listItem.html("<input class='edit-text'></input><button class='save-button' type='button'>Save</button>" +
-                    "<button class='cancel-button' type='button'>Cancel</button><span id='edit-error-message' class='error'></span>");
+                    "<button class='cancel-button' type='button'>Cancel</button>" +
+                    "<div id='edit-error-message' class='error'></div>");
                 listItem.find(".edit-text").val(newTodoItemText);
 
                 listItem.find(".save-button").click(function () {
