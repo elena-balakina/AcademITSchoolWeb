@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet">
+
+    <script defer src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="script.js"></script>
+
+    <title>Todo List Bootstrap</title>
+</head>
+
+<body>
+
+
+<div class="main">
+    <h1 class="header">TODO LIST</h1>
+
+    <div class="content">
+        <div class="subtitle">New todo item:<br>
+            <input id="new-todo-item" class="input-field" type="text"
+                   placeholder="Add new item">
+        </div>
+        <div id="error-message" class="error"></div>
+
+        <button id="add-button" class="add-button" type="button">ADD</button>
+
+        <ul id="todo-list" class="todo-list"></ul>
+    </div>
+</div>
+
+
+</body>
+</html>

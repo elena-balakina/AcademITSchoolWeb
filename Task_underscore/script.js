@@ -1,5 +1,3 @@
-const _ = require("underscore");
-
 (function () {
     "use strict";
 
@@ -56,17 +54,28 @@ const _ = require("underscore");
         }
     ];
 
+
+    console.log("Список людей, отсортированный по возрасту:");
+    var sorted = _.sortBy(people, "age");
+    console.log(sorted);
+
     console.log("Средний возраст людей: " + getAverageAge(people));
 
-    console.log("Люди от 20 до 30 включительно, по возрастанию:");
+    console.log("Люди от 20 до 30 включительно, по возрастанию возраста:");
     console.log(getPeopleFrom20To30Asc(people));
 
     console.log("Добавить fullName: ");
     console.log(addFullName(people));
 
     function getAverageAge(people) {
+        var sum = _.chain(people)
+            .pluck("age")
+            .reduce(function (memo, num) {
+                return memo + num;
+            }, 0)
+            .value();
 
-        return 0;
+        return sum / people.length;
     }
 
     function getPeopleFrom20To30Asc(people) {
@@ -74,14 +83,14 @@ const _ = require("underscore");
             .filter(function (p) {
                 return p.age >= 20 && p.age <= 30;
             })
-            .pluck("lastName")
-            .uniq()
-            .sortBy()
+            .sortBy("age")
             .value();
     }
 
     function addFullName(people) {
-
+        return _.map(people, function (element) {
+            return _.extend({}, element, {fullName: element.name + " " + element.lastName});
+        });
     }
 })
 ();
