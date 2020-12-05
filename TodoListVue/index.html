@@ -3,14 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link href="style.css" rel="stylesheet">
 
-    <script defer src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="node_modules/vue/dist/vue.min.js"></script>
-    <script defer src="script.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 
     <title>Todo List Vue</title>
 </head>
@@ -31,11 +30,26 @@
         </div>
 
         <ul>
-            <li v-for="item in items" :key="item.id">
-                {{ item.text }}
+            <li class="py-1" v-for="item in items" :key="item.id">
+                <template v-if="item.isEditing">
+                    <input v-model="item.editText" type="text"/>
+                    <button @click="saveItem(item)" class="btn btn-primary" type="button">Save</button>
+                    <button @click="cancelEditItem(item)" class="btn btn-danger" type="button">Cancel</button>
+                </template>
+                <template v-else>
+                    <span>{{ item.text }}</span>
+                    <button @click="startEditItem(item)" class="btn btn-primary" type="button">Edit</button>
+                    <button @click="deleteItem(item)" class="btn btn-danger" type="button">Delete</button>
+                </template>
             </li>
         </ul>
     </div>
 </div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="node_modules/vue/dist/vue.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
