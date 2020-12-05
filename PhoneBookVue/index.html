@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+
+    <title>Phone Book Vue</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div v-cloak id="app">
+        <h1 class="mb-3">Phone Book</h1>
+        <div>Fill the form to add a new contact:</div>
+        <div class="row no-gutters">
+            <div class="col-3 pr-2">
+                <input v-model.trim="newFirstName" class="form-control mb-2" type="text" placeholder="Enter first name"/>
+            </div>
+            <div class="col-3 pr-2">
+                <input v-model.trim="newLastName" class="form-control mb-2" type="text" placeholder="Enter last name"/>
+            </div>
+            <div class="col-2 pr-2">
+                <input v-model.trim="newPhoneNumber" class="form-control mb-2" type="text" placeholder="Enter phone number"/>
+            </div>
+            <div class="col-auto">
+                <button @click="addContact" class="btn btn-primary mb-2" type="button">ADD</button>
+            </div>
+        </div>
+
+        <div id="table-content">
+            <table id="table" class="table table-inverse">
+                <thead>
+                <tr>
+                    <th>№</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone number</th>
+                    <th>Delete contact</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="item in items" :key="item.id">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.newFirstName }}</td>
+                    <td>{{ item.newLastName }}</td>
+                    <td>{{ item.newPhoneNumber }}</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="node_modules/vue/dist/vue.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
