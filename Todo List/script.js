@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var errorMessage = document.getElementById("error-message");
 
     addButton.addEventListener("click", function () {
-        var newTodoItemText = newTodoItemField.value;
+        var newTodoItemText = newTodoItemField.value.trim();
 
         if (newTodoItemText === "") {
             errorMessage.textContent = "Please, add some text";
@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
             listItem.querySelector(".edit-button").addEventListener("click", function () {
                 listItem.innerHTML = "<input class='edit-text'><button class='save-button' type='button'>Save</button>" +
                     "<button class='cancel-button' type='button'>Cancel</button>" +
-                    "<div id='edit-error-message' class='error'></div>";
+                    "<div class='error'></div>";
                 listItem.querySelector(".edit-text").value = newTodoItemText;
 
                 listItem.querySelector(".save-button").addEventListener("click", function () {
                     if (listItem.querySelector(".edit-text").value === "") {
-                        var editErrorMessage = document.getElementById("edit-error-message");
+                        var editErrorMessage = document.querySelector("div.error");
                         editErrorMessage.textContent = "Please, add some text";
                         return;
                     }
