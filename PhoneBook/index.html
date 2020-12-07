@@ -13,13 +13,13 @@
     <h1 class="header">Phone Book</h1>
 
     <div class="content">
-        <form id="form">
+        <form id="form" class="form">
             <div class="subtitle">Fill the form to add a new contact:<br>
-                <input id="first-name-input-field" class="input-field" type="text"
+                <input id="first-name-input-field" class="input-field first-name-input-field" type="text"
                        placeholder="Enter First Name*">
-                <input id="last-name-input-field" class="input-field" type="text"
+                <input id="last-name-input-field" class="input-field last-name-input-field" type="text"
                        placeholder="Enter Last Name*">
-                <input id="phone-number-input-field" class="input-field" type="text"
+                <input id="phone-number-input-field" class="input-field phone-number-input-field" type="text"
                        placeholder="Enter Phone Number*">
             </div>
             <div id="error-message" class="error"></div>
@@ -30,10 +30,10 @@
 
         <br>
 
-        <div id="table-content">
+        <div id="table-content" class="table-content">
             <table id="table" class="table">
                 <thead>
-                <tr>
+                <tr class="row-table">
                     <th class="id">№</th>
                     <th class="last-name">Last Name</th>
                     <th class="first-name">First Name</th>

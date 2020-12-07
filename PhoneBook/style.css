@@ -45,29 +45,29 @@ body {
     border-color: #f00;
 }
 
-#first-name-input-field {
+.first-name-input-field {
     margin-right: 10px;
     max-width: 250px;
     width: 100%;
 }
 
-#last-name-input-field {
+.last-name-input-field {
     max-width: 400px;
     width: 100%;
     margin-right: 10px;
 }
 
-#phone-number-input-field {
+.phone-number-input-field {
     max-width: 280px;
     width: 100%;
 }
 
-#form {
+.form {
     max-width: 950px;
     margin: auto 0;
 }
 
-#table-content {
+.table-content {
     max-width: 1000px;
     margin: auto 0;
 }
@@ -140,13 +140,13 @@ td.id, td.delete-button {
     text-align: center;
 }
 
-tr, td, th {
+.row-table, .table-body td, .row-table th {
     border: 1px solid #cccccc;
     padding: 5px;
     text-align: left;
 }
 
-th {
+.row-table th {
     background: #3498DB;
     color: #FFF;
     text-align: center;
