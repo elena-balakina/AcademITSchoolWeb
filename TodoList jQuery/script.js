@@ -24,23 +24,24 @@ $(document).ready(function () {
             });
 
             listItem.find(".edit-button").click(function () {
-                var errorMessage = $("#error-message");
+                // errorMessage = $("#error-message");
                 errorMessage.text("");
 
                 listItem.html("<input class='edit-text'></input><button class='save-button' type='button'>Save</button>" +
                     "<button class='cancel-button' type='button'>Cancel</button>" +
-                    "<div id='edit-error-message' class='error'></div>");
+                    "<div class='error'></div>");
                 listItem.find(".edit-text").val(newTodoItemText);
 
                 listItem.find(".save-button").click(function () {
-                    if (listItem.find(".edit-text").val() === "") {
-                        var editErrorMessage = $("#edit-error-message");
+                    if (listItem.find(".edit-text").val().trim() === "") {
+                        var editErrorMessage = $("#todo-list .error");
                         editErrorMessage.text("Please, add some text");
                         return;
-                    } else {
-                        newTodoItemText = listItem.find(".edit-text").val();
-                        setViewMode();
                     }
+
+                    newTodoItemText = listItem.find(".edit-text").val();
+                    setViewMode();
+
                 });
 
                 listItem.find(".cancel-button").click(function () {
