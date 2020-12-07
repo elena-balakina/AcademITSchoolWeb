@@ -125,7 +125,7 @@ body {
     font-family: "Segoe UI", sans-serif;
     line-height: 41px;
     margin: 1em 0;
-    border: 1px solid #cccccc;
+    border: 1px solid #CCC;
     border-collapse: collapse;
     text-indent: 5px;
     max-width: 950px;
@@ -141,7 +141,7 @@ td.id, td.delete-button {
 }
 
 .row-table, .table-body td, .row-table th {
-    border: 1px solid #cccccc;
+    border: 1px solid #CCC;
     padding: 5px;
     text-align: left;
 }
