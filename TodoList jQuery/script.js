@@ -24,10 +24,9 @@ $(document).ready(function () {
             });
 
             listItem.find(".edit-button").click(function () {
-                // errorMessage = $("#error-message");
                 errorMessage.text("");
 
-                listItem.html("<input class='edit-text'></input><button class='save-button' type='button'>Save</button>" +
+                listItem.html("<input class='edit-text'><button class='save-button' type='button'>Save</button>" +
                     "<button class='cancel-button' type='button'>Cancel</button>" +
                     "<div class='error'></div>");
                 listItem.find(".edit-text").val(newTodoItemText);
@@ -41,7 +40,6 @@ $(document).ready(function () {
 
                     newTodoItemText = listItem.find(".edit-text").val();
                     setViewMode();
-
                 });
 
                 listItem.find(".cancel-button").click(function () {
