@@ -37,7 +37,7 @@ new Vue({
 
         addContact: function () {
             if (!this.checkFields()) {
-                return
+                return;
             }
 
             var firstName = this.newFirstName;

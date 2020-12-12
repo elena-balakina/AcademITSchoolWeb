@@ -4,18 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-
-    <style>
-        [v-cloak] {
-            display: none;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
 
     <title>Phone Book Vue</title>
 </head>
-
 <body>
-
 <div class="container">
     <div v-cloak id="app">
         <h1 class="mb-3">Phone Book</h1>
@@ -33,7 +26,8 @@
                        placeholder="Enter phone number"/>
             </div>
             <div class="col-auto">
-                <button @click="addContact" class="btn btn-primary mb-2" type="button">ADD</button>
+                <button @click="addContact" class="btn btn-primary mb-2" type="button">ADD
+                </button>
             </div>
         </div>
 
@@ -53,13 +47,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="item in items" :key="item.id">
-                    <td>{{ item.id }}</td>
+                <tr v-for="(item, index) in items" :key="item.id">
+                    <td> {{ index + 1 }}</td>
                     <td>{{ item.newFirstName }}</td>
                     <td>{{ item.newLastName }}</td>
                     <td>{{ item.newPhoneNumber }}</td>
                     <td>
-                        <button @click="deleteContact (item)" class="btn btn-danger" type="button">Delete</button>
+                        <button @click="deleteContact(item)" class="btn btn-danger"
+                                type="button">Delete
+                        </button>
                     </td>
                 </tr>
                 </tbody>
@@ -72,6 +68,5 @@
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="node_modules/vue/dist/vue.min.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
