@@ -54,7 +54,6 @@
         }
     ];
 
-
     console.log("Список людей, отсортированный по возрасту:");
     var sorted = _.sortBy(people, "age");
     console.log(sorted);
@@ -88,9 +87,8 @@
     }
 
     function addFullName(people) {
-        return _.map(people, function (element) {
-            return _.extend({}, element, {fullName: element.name + " " + element.lastName});
+        return _.each(people, function (element) {
+            element.fullName = element.name + " " + element.lastName;
         });
     }
-})
-();
+})();
