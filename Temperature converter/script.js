@@ -1,6 +1,6 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function ready() {
+document.addEventListener("DOMContentLoaded", function() {
     var celsiusInputField = document.getElementById("celsius");
     var kelvinOutputField = document.getElementById("kelvin");
     var fahrenheitOutputField = document.getElementById("fahrenheit");
