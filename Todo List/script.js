@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 listItem.querySelector(".edit-text").value = newTodoItemText;
 
                 listItem.querySelector(".save-button").addEventListener("click", function () {
-                    if (listItem.querySelector(".edit-text").value === "") {
-                        var editErrorMessage = document.querySelector("div.error");
+                    if (listItem.querySelector(".edit-text").value.trim() === "") {
+                        var editErrorMessage = document.querySelector("#todo-list .error");
                         editErrorMessage.textContent = "Please, add some text";
                         return;
                     }
