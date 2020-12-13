@@ -4,18 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-
-    <style>
-        [v-cloak] {
-            display: none;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
 
     <title>Todo List Vue</title>
 </head>
-
 <body>
-
 <div class="container">
     <div v-cloak id="app">
         <h1 class="mb-3">TODO List</h1>
@@ -29,12 +22,19 @@
             </div>
         </div>
 
+
+        <div>
+            <div class="mb-2 text-danger" v-if="newItemError">{{ newItemError }}</div>
+        </div>
+
+
         <ul>
             <li class="py-1" v-for="item in items" :key="item.id">
                 <template v-if="item.isEditing">
                     <input v-model="item.editText" type="text"/>
                     <button @click="saveItem(item)" class="btn btn-primary" type="button">Save</button>
                     <button @click="cancelEditItem(item)" class="btn btn-danger" type="button">Cancel</button>
+                    <div class="mb-2 text-danger" v-if="item.itemError">{{ item.itemError }}</div>
                 </template>
                 <template v-else>
                     <span>{{ item.text }}</span>
@@ -50,6 +50,5 @@
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="node_modules/vue/dist/vue.min.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>

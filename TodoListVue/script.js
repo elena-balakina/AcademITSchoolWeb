@@ -2,9 +2,10 @@ new Vue({
     el: "#app",
 
     data: {
-        items: [], // { id, text, isEditing, editText }
+        items: [], // { id, text, isEditing, editText, itemError }
         newTodoText: "",
-        newId: 1
+        newId: 1,
+        newItemError: ""
     },
 
     methods: {
@@ -12,6 +13,7 @@ new Vue({
             var text = this.newTodoText;
 
             if (text.trim().length === 0) {
+                this.newItemError = "Enter new item text";
                 return;
             }
 
@@ -19,11 +21,13 @@ new Vue({
                 id: this.newId,
                 text: text,
                 isEditing: false,
-                editText: text
+                editText: text,
+                itemError: ""
             });
 
             this.newTodoText = "";
             this.newId++;
+            this.newItemError = "";
         },
 
         deleteItem: function (item) {
@@ -34,7 +38,6 @@ new Vue({
 
         startEditItem: function (item) {
             item.isEditing = true;
-
         },
 
         cancelEditItem: function (item) {
@@ -44,11 +47,13 @@ new Vue({
 
         saveItem: function (item) {
             if (item.editText.trim().length === 0) {
+                item.itemError = "Item text can not be empty";
                 return;
             }
 
             item.isEditing = false;
             item.text = item.editText;
+            item.itemError = "";
         }
     }
 });
