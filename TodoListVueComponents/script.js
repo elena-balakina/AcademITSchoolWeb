@@ -9,7 +9,8 @@ Vue.component("todo-list-item", {
     data: function () {
         return {
             editText: "",
-            isEditing: false
+            isEditing: false,
+            itemError: ""
         }
     },
 
@@ -19,7 +20,6 @@ Vue.component("todo-list-item", {
         startEditItem: function () {
             this.editText = this.item.text;
             this.isEditing = true;
-
         },
 
         cancelEditItem: function () {
@@ -28,10 +28,12 @@ Vue.component("todo-list-item", {
 
         saveItem: function () {
             if (this.editText.trim().length === 0) {
+                this.itemError = "Item text can not be empty";
                 return;
             }
 
             this.isEditing = false;
+            this.itemError = "";
             this.$emit("save-item", this.item, this.editText);
         },
 
@@ -46,7 +48,8 @@ Vue.component("todo-list", {
         return {
             items: [], // { id, text }
             newTodoText: "",
-            newId: 1
+            newId: 1,
+            newItemError: ""
         }
     },
 
@@ -57,6 +60,7 @@ Vue.component("todo-list", {
             var text = this.newTodoText;
 
             if (text.trim().length === 0) {
+                this.newItemError = "Enter new item text";
                 return;
             }
 
@@ -67,6 +71,7 @@ Vue.component("todo-list", {
 
             this.newTodoText = "";
             this.newId++;
+            this.newItemError = "";
         },
 
         deleteItem: function (item) {
