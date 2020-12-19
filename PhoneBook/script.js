@@ -24,7 +24,7 @@ $(document).ready(function () {
                 if ($(this).val().trim() === "") {
                     $(this).addClass("empty-field");
                 } else {
-                    $(this).removeClass("empty-field");
+                    $(this).toggleClass("empty-field");
                 }
             });
 
@@ -71,9 +71,8 @@ $(document).ready(function () {
         }
 
         function cleanInputFieldErrorClasses() {
-            $("#form").find(".input-field").each(function () {
-                $(this).removeClass("empty-field");
-            });
+            $("#form").find(".input-field").removeClass("empty-field");
+
         }
 
         function updateTableNumeration() {
