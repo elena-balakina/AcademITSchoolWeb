@@ -43,6 +43,7 @@ new Vue({
         cancelEditItem: function (item) {
             item.isEditing = false;
             item.editText = item.text;
+            item.itemError = ""
         },
 
         saveItem: function (item) {
