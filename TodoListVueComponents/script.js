@@ -24,6 +24,7 @@ Vue.component("todo-list-item", {
 
         cancelEditItem: function () {
             this.isEditing = false;
+            this.itemError = "";
         },
 
         saveItem: function () {
