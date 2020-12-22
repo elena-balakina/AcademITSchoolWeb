@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             listItem.querySelector(".edit-button").addEventListener("click", function () {
+                if (document.getElementsByClassName("edit-text").length !== 0) {
+                    window.document.querySelector(".cancel-button").click();
+                }
+
                 listItem.innerHTML = "<input class='edit-text'><button class='save-button' type='button'>Save</button>" +
                     "<button class='cancel-button' type='button'>Cancel</button>" +
                     "<div class='error'></div>";
