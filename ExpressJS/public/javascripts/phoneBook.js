@@ -14,7 +14,7 @@ function PhoneBookService() {
     this.baseURL = "/api/";
 
     this.getContacts = function (term) {
-        return get(this.baseURL + "getContacts", {term: term});
+        return get(this.baseURL + "getContacts", { term: term });
     };
 
     this.addContact = function (contact) {
@@ -23,7 +23,7 @@ function PhoneBookService() {
 
     this.deleteContact = function (id) {
         return post(this.baseURL + "deleteContact", {id: id});
-    }
+    };
 }
 
 new Vue({
