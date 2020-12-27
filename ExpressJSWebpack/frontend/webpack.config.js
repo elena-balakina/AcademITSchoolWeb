@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     devtool: "source-map",
 
+    target: ["web", "es5"],
+
     entry: "./js/phoneBook.js",
 
     output: {
@@ -29,6 +31,10 @@ module.exports = {
             }, {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+            }, {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {loader: "babel-loader", options: {presets: ["@babel/preset-env"]}}
             }
         ]
     },
