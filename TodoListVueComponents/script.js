@@ -11,7 +11,7 @@ Vue.component("todo-list-item", {
             editText: "",
             isEditing: false,
             itemError: ""
-        }
+        };
     },
 
     template: "#todo-list-item-template",
@@ -51,7 +51,7 @@ Vue.component("todo-list", {
             newTodoText: "",
             newId: 1,
             newItemError: ""
-        }
+        };
     },
 
     template: "#todo-list-template",
