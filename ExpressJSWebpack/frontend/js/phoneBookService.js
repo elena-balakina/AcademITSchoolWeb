@@ -1,4 +1,4 @@
-import {  get, post } from "./ajax";
+import { get, post } from "./ajax";
 
 export default class PhoneBookService {
     constructor() {
@@ -6,14 +6,14 @@ export default class PhoneBookService {
     }
 
     getContacts(term) {
-        return get(this.baseURL + "getContacts", {term});
-    };
+        return get(this.baseURL + "getContacts", { term });
+    }
 
     addContact(contact) {
-        return post(this.baseURL + "addContact", {contact});
-    };
+        return post(this.baseURL + "addContact", { contact });
+    }
 
     deleteContact(id) {
-        return post(this.baseURL + "deleteContact", {id});
-    };
+        return post(this.baseURL + "deleteContact", { id });
+    }
 }
